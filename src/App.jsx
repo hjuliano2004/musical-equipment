@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { useEffect, useState } from 'react'
+import { Tabela } from './componentes/tabela/Tabela';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     }
 
     fetchData();
-  }, []);
+  }, [lista]);
 
 
   return (
@@ -31,11 +32,14 @@ function App() {
       <main>
 
         <div id="btn">
-          <Link>listagem(Cards)"</Link>
-          <Link>Listagem(tabela)</Link>
+          <Link>listagem(Cards)</Link>
+          <Link to="/tabela">Listagem(tabela)</Link>
         </div>
 
-      
+        <Routes>
+          <Route path="/tabela" element={<Tabela lista={lista} />} />
+        </Routes>
+        
       </main>
     
   )
