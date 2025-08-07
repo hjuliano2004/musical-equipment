@@ -2,6 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { useEffect, useState } from 'react'
 import { Tabela } from './componentes/tabela/Tabela';
+import { Cards } from './componentes/cards/Cards';
 
 function App() {
 
@@ -32,12 +33,13 @@ function App() {
       <main>
 
         <div id="btn">
-          <Link>listagem(Cards)</Link>
+          <Link to="/cards">listagem(Cards)</Link>
           <Link to="/tabela">Listagem(tabela)</Link>
         </div>
 
         <Routes>
           <Route path="/tabela" element={<Tabela lista={lista} />} />
+          <Route path="/cards" element={<Cards lista={lista} />} />
         </Routes>
         
       </main>
