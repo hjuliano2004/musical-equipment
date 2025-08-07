@@ -7,9 +7,9 @@ function App() {
   const [lista, setLista] = useState([]);
 
   useEffect(()=>{
-    let url = "localhost:3000/equipamentos";
+    let url = "http://localhost:3000/equipamentos";
 
-    async function fetchData(){
+    let fetchData = async () =>{
       
       try{
 
@@ -17,11 +17,9 @@ function App() {
        let json = await requisicao.json();
        setLista(json);
 
-
       }catch(e){
       console.error(e);
       }
-
     }
 
     fetchData();
@@ -37,10 +35,7 @@ function App() {
           <Link>Listagem(tabela)</Link>
         </div>
 
-
-      <Routes>
-        
-      </Routes>
+      
       </main>
     
   )
